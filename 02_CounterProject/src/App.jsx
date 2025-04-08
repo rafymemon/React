@@ -9,19 +9,21 @@ function App() {
   //  let counter = 5;
 
   const addValue = () => {
-    counter = counter + 1;
-    setCounter(counter);
     if (counter == 20) {
-      setValue(20);
+      setCounter(20);
     } else {
+      counter = counter+1;
       setCounter(counter);
     }
   };
   const removeValue = () => {
-    counter = counter - 1;
+    if(counter <= 0) {
+      setCounter(0);
+  } else {
+    counter = counter -1;
     setCounter(counter);
-    console.log("value removed", counter);
-  };
+  }
+};
   return (
     <>
       <h1>Learning React </h1>
